@@ -92,7 +92,7 @@ export default {
     },
     created() {
         if ( this.editMode) {
-            Object.assign(this.product, this.$store.getters.produceById(this.$route.params["id"]))
+            Object.assign(this.product, this.$store.getters.productById(this.$route.params["id"]))
         }
     }
 }
