@@ -9,12 +9,17 @@ new Vue({
             <h1 class="bg-secondary text-white p-3">
                 Button Presses: {{ counter }}
             </h1>
-            <button class="btn btn-secondary">
+            <button class="btn btn-secondary" v-on:click="handleClick">
                 Press Me
             </button>
         </div>`,
     data: {
         counter: 0
+    },
+    methods: {
+        handleClick() {
+            this.counter++;
+        }
     }
 });
 
