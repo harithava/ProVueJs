@@ -1,30 +1,17 @@
-//import Vue from 'vue'
-//import App from './App.vue'
+require('../node_modules/bootstrap/dist/css/bootstrap.min.css')
 
-import "bootstrap/dist/css/bootstrap.min.css";
+import Vue from "vue"
 
-//Vue.config.productionTip = false
-//
-//new Vue({
-//  render: h => h(App),
-//}).$mount('#app')
+new Vue({
+    el: "#app",
+    template:
+        `<div class="text-center p-3">
+            <h1 class="bg-secondary text-white p-3">
+                Vue: Button Not Pressed
+            </h1>
+            <button class="btn btn-secondary">
+                Press Me
+            </button>
+        </div>`
+});
 
-let counter = 1;
-
-let container = document.createElement("div");
-container.classList.add("text-center", "p-3");
-
-let msg = document.createElement("h1");
-msg.classList.add("bg-primary", "text-white", "p-3")
-msg.textContent= "Button Not Pressed"
-
-let button = document.createElement("button");
-button.textContent = "Press Me";
-button.classList.add("btn", "btn-secondary");
-button.onclick = () => msg.textContent = `Button Presses: ${counter++}`;
-
-container.appendChild(msg);
-container.appendChild(button);
-
-let app = document.getElementById("app");
-app.parentElement.replaceChild( container, app);
