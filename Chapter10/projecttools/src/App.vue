@@ -21,7 +21,7 @@ export default {
     },
     methods: {
         incrementCounter() {
-            debugger;
+            //debugger;
             this.counter++;
         }
     }
