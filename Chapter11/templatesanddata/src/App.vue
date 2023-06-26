@@ -1,11 +1,16 @@
 <template>
   <div class="bg-primary text-white text-center m-2 p-3">
-        <h3>This is the component</h3>
+        <h3>Product: {{ name }}</h3>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'MyComponent'
+  name: 'MyComponent',
+  data: function () {
+    return {
+        name: "Kayak"
+    }
+  }
 }
 </script>
