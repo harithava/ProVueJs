@@ -1,6 +1,6 @@
 <template>
   <div class="bg-primary text-white text-center m-2 p-3">
-        <h3>Product: {{ name }}</h3>
+        <h3>Product: {{ name | reverse | capitalize }}</h3>
         <h4>Price: {{ getTotalPrice(lowTaxRate) | currency(3) }} (Low Rate) </h4>
         <h4>Price: {{ getTotalPrice(highTaxRate) | currency }} (High Rate) </h4>
   </div>
@@ -11,8 +11,8 @@ export default {
   name: 'MyComponent',
   data: function () {
     return {
-        name: "Kayak",
-        price: 275,
+        name: "Lifejacket",
+        price: 48.95,
         lowTaxRate: 12,
         highTaxRate: 20
     }
@@ -28,6 +28,12 @@ export default {
             { style: "currency", currency: "USD",
                 minimumFractionDigits: places || 2,
                 maximumFractionDigits: places || 2}).format(value);
+    },
+    capitalize(value) {
+        return value[0].toUpperCase() + value.slice(1);
+    },
+    reverse(value) {
+        return value.split("").reverse().join("");
     }
   }
 }
