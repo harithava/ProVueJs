@@ -12,13 +12,14 @@ export default {
     return {
         name: "Kayak",
         price: 275,
-        taxRate: 12
+        taxRate: 12,
+        counter: 0
     }
   },
   computed: {
     totalPrice: function() {
         let tp = this.price + (this.price * (this.taxRate / 100));
-        console.log(`Calculated: ${tp} (${this.taxRate })`)
+        console.log(`Calculated: (${this.counter++}) ${tp} (${this.taxRate })`)
         return tp;
     }
   }
