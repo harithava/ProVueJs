@@ -19,12 +19,15 @@ export default {
   },
   computed: {
     lowTotalPrice: function() {
-        let tp = this.price + (this.price * (this.lowTaxRate / 100));
-        return tp;
+        return this.getTotalPrice(this.lowTaxRate);
     },
     highTotalPrice: function() {
-        let tp = this.price + (this.price * (this.highTaxRate / 100));
-        return tp;
+        return this.getTotalPrice(this.highTaxRate);
+    }
+  },
+  methods: {
+    getTotalPrice(taxRate) {
+        return this.price + (this.price * (taxRate / 100));
     }
   }
 }
