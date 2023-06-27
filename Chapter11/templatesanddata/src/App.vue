@@ -17,7 +17,9 @@ export default {
   },
   computed: {
     totalPrice: function() {
-        return this.price + (this.price * (this.taxRate / 100));
+        let tp = this.price + (this.price * (this.taxRate / 100));
+        console.log(`Calculated: ${tp} (${this.taxRate })`)
+        return tp;
     }
   }
 }
