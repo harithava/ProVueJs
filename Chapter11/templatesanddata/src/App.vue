@@ -1,8 +1,8 @@
 <template>
   <div class="bg-primary text-white text-center m-2 p-3">
         <h3>Product: {{ name }}</h3>
-        <h4>Price: ${{ getTotalPrice(this.lowTaxRate).toFixed(2) }} </h4>
-        <h4>Price: ${{ this.getTotalPrice(this.highTaxRate).toFixed(2) }} </h4>
+        <h4>Price: {{ getTotalPrice(lowTaxRate) | currency }} (Low Rate) </h4>
+        <h4>Price: {{ getTotalPrice(highTaxRate) | currency }} (High Rate) </h4>
   </div>
 </template>
 
@@ -20,6 +20,12 @@ export default {
   methods: {
     getTotalPrice(taxRate) {
         return this.price + (this.price * (taxRate / 100));
+    }
+  },
+  filters: {
+    currency(value) {
+        return new Intl.NumberFormat( "en-US",
+            { style: "currency", currency: "USD"}).format(value);
     }
   }
 }
