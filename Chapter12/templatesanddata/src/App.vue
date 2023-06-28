@@ -1,8 +1,9 @@
 <template>
     <div class="container-fluid text-center">
         <div class="bg-primary text-white m-2 p-3">
-            <h3 v-if="showElements">Product: {{ name }}</h3>
-            <h3 v-else>Product: {{ price }}</h3>
+            <h3 v-if="counter % 3 == 0 ">Product: {{ name }}</h3>
+            <h3 v-else-if="counter % 3 == 1">Price: {{ price }}</h3>
+            <h3 v-else>Category: {{ category }}</h3>
         </div>
         <button v-on:click="handleClick" class="btn btn-primary">
             Press Me
@@ -17,12 +18,13 @@ export default {
     return {
         name: "Lifejacket",
         price: 275,
-        showElements: true
+        category: "Watersports",
+        counter: 0
     }
   },
   methods: {
     handleClick() {
-        this.showElements = !this.showElements;
+        this.counter++;
     }
   }
 }
