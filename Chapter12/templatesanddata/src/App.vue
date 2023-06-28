@@ -1,7 +1,7 @@
 <template>
     <div class="container-fluid text-center">
         <div class="bg-primary text-white m-2 p-3">
-            <h3>Product: {{ name }}</h3>
+            <h3>Product: <span v-text="name"></span></h3>
         </div>
         <button v-on:click="handleClick" class="btn btn-primary">
             Press Me
