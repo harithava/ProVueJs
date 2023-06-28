@@ -2,7 +2,12 @@
     <div class="container-fluid text-center">
         <div class="bg-primary text-white m-2 p-3">
             <h3>Product: <span v-text="name"></span></h3>
-            <h4 v-if="showElements"> {{ price }}</h4>
+            <ul class="text-left">
+                <li>List item</li>
+                <li v-if="showElements">{{name}}</li>
+                <li v-if="showElements">{{price}}</li>
+                <li>Other list item</li>
+            </ul>
         </div>
         <button v-on:click="handleClick" class="btn btn-primary">
             Press Me
