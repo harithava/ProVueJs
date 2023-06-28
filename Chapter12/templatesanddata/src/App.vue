@@ -4,8 +4,10 @@
             <h3>Product: <span v-text="name"></span></h3>
             <ul class="text-left">
                 <li>List item</li>
-                <li v-if="showElements">{{name}}</li>
-                <li v-if="showElements">{{price}}</li>
+                <template v-if="showElements">
+                    <li>{{name}}</li>
+                    <li>{{price}}</li>
+                </template>
                 <li>Other list item</li>
             </ul>
         </div>
